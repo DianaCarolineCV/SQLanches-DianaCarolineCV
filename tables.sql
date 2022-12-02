@@ -34,6 +34,6 @@ CREATE TABLE IF NOT EXISTS produtos_pedidos(
     id BIGSERIAL PRIMARY KEY,
     pedido_id INTEGER NOT NULL,
     produto_id INTEGER NOT NULL,
-    FOREIGN KEY (pedido_id) REFERENCES pedidos (id),
-    FOREIGN KEY (produto_id) REFERENCES produtos (id)
+    FOREIGN KEY (pedido_id) REFERENCES pedidos (id) ON DELETE CASCADE,
+    FOREIGN KEY (produto_id) REFERENCES produtos (id) ON DELETE CASCADE
 );
